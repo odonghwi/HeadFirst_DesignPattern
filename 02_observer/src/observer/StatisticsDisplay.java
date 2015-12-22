@@ -1,4 +1,6 @@
-import java.util.ArrayList;
+package observer;
+
+import subject.Subject;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
 
