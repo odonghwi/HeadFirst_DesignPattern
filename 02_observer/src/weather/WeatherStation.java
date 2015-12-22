@@ -1,7 +1,10 @@
-import observer.CurrentConditionsDisplay;
-import observer.ForecastDisplay;
-import observer.StatisticsDisplay;
-import subject.WeatherData;
+package weather;
+
+import weather.observer.CurrentConditionsDisplay;
+import weather.observer.ForecastDisplay;
+import weather.observer.HeatIndexDisplay;
+import weather.observer.StatisticsDisplay;
+import weather.subject.WeatherData;
 
 public class WeatherStation {
 
@@ -12,6 +15,7 @@ public class WeatherStation {
         CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
         StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
         ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
+        HeatIndexDisplay heatIndexDisplay = new HeatIndexDisplay(weatherData);
 
         weatherData.setMeasurements(80, 65, 30.4f);
         weatherData.setMeasurements(82, 70, 29.2f);

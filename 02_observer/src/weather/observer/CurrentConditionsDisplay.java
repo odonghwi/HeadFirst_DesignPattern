@@ -1,6 +1,6 @@
-package observer;
+package weather.observer;
 
-import subject.Subject;
+import weather.subject.Subject;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 
@@ -14,6 +14,7 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
         weatherData.registerObserver(this);
     }
 
+    @Override
     public void update(float temperature, float humidity, float pressure)
     {
         this.temperature = temperature;

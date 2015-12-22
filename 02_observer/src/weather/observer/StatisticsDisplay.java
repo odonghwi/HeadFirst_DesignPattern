@@ -1,6 +1,6 @@
-package observer;
+package weather.observer;
 
-import subject.Subject;
+import weather.subject.Subject;
 
 public class StatisticsDisplay implements Observer, DisplayElement {
 
