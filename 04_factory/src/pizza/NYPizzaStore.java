@@ -1,3 +1,5 @@
+package pizza;
+
 public class NYPizzaStore extends PizzaStore {
 
     @Override
