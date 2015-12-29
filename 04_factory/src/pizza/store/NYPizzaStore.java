@@ -5,8 +5,10 @@ import pizza.ingredient.factory.PizzaIngredientFactory;
 import pizza.pizza.CheesePizza;
 import pizza.pizza.Pizza;
 
-public class NYPizzaStore extends PizzaStore {
+import java.rmi.registry.Registry;
 
+public class NYPizzaStore extends PizzaStore {
+    Registry
     @Override
     protected Pizza createPizza(String item) {
 
