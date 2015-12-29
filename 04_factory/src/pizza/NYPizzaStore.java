@@ -1,5 +1,8 @@
 package pizza;
 
+import pizza.pizza.Pizza;
+import pizza.store.PizzaStore;
+
 public class NYPizzaStore extends PizzaStore {
 
     @Override

@@ -1,4 +1,6 @@
-package pizza;
+package pizza.store;
+
+import pizza.pizza.Pizza;
 
 public abstract class PizzaStore {
 
