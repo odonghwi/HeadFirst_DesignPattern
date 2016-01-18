@@ -1,7 +1,7 @@
 package remotecontrol;
 
 import remotecontrol.command.*;
-import remotecontrol.invoker.RemoteControl;
+import remotecontrol.invoker.RemoteControlWithUndo;
 import remotecontrol.receiver.CeilingFan;
 import remotecontrol.receiver.GarageDoor;
 import remotecontrol.receiver.Light;
@@ -11,7 +11,7 @@ public class RemoteLoader {
 
     public static void main(String[] args) {
 
-        RemoteControl remoteControl = new RemoteControl();
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 
         Light livingRoomLight = new Light("Living Room");
         Light kitchenLIght = new Light("Kitchen");
@@ -43,12 +43,12 @@ public class RemoteLoader {
 
         remoteControl.onButtonWasPushed(0);
         remoteControl.offBUttonWasPushed(0);
-        remoteControl.onButtonWasPushed(1);
-        remoteControl.offBUttonWasPushed(1);
-        remoteControl.onButtonWasPushed(2);
-        remoteControl.offBUttonWasPushed(2);
-        remoteControl.onButtonWasPushed(3);
-        remoteControl.offBUttonWasPushed(3);
+
+        System.out.println(remoteControl);
+
+        remoteControl.undoButtonWasPushed();
+
+        System.out.println(remoteControl);
 
 
     }
