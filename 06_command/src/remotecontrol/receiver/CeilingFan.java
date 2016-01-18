@@ -2,28 +2,42 @@ package remotecontrol.receiver;
 
 public class CeilingFan {
 
+    public static final int HIGH = 3;
+    public static final int MEDIUM = 2;
+    public static final int LOW = 1;
+    public static final int OFF = 0;
+
     String position = "";
-    String speed;
+    int speed;
 
 
     public CeilingFan(String position) {
         this.position = position;
+        speed = OFF;
     }
 
     public void high() {
-        System.out.println(position + " celling fan is on high");
+        speed = HIGH;
+        System.out.println(position+ "ceiling fan is high");
     }
 
     public void medium() {
-        System.out.println(position + " celling fan is on medium");
+        speed = MEDIUM;
+        System.out.println(position+ "ceiling fan is medium");
     }
 
     public void low() {
-        System.out.println(position + " celling fan is on low");
+        speed = LOW;
+        System.out.println(position+ "ceiling fan is low");
     }
 
     public void off() {
-        System.out.println(position + " celling fan is Off");
+        speed = OFF;
+        System.out.println(position+ "ceiling fan is off");
+    }
+
+    public int getSpeed() {
+        return speed;
     }
 
 
