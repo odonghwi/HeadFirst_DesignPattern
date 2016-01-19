@@ -2,7 +2,11 @@ package remotecontrol.receiver;
 
 public class Stereo {
 
-    public Stereo () {}
+    String position;
+
+    public Stereo (String position) {
+        this.position = position;
+    }
 
     public void on() {
         System.out.println("Stereo is On");

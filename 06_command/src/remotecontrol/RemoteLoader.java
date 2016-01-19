@@ -3,7 +3,6 @@ package remotecontrol;
 import remotecontrol.command.*;
 import remotecontrol.invoker.RemoteControlWithUndo;
 import remotecontrol.receiver.CeilingFan;
-import remotecontrol.receiver.GarageDoor;
 import remotecontrol.receiver.Light;
 import remotecontrol.receiver.Stereo;
 
@@ -11,6 +10,28 @@ public class RemoteLoader {
 
     public static void main(String[] args) {
 
+        RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
+        Light light = new Light("Living Room");
+        Stereo stereo = new Stereo("Living Room");
+
+        LightOnCommand lightOnCommand = new LightOnCommand(light);
+        StereoOnWithCDCommand stereoOnWithCDCommand = new StereoOnWithCDCommand(stereo);
+
+        LightOffCommand lightOffCommand = new LightOffCommand(light);
+        StereoOffCommand stereoOffCommand = new StereoOffCommand(stereo);
+
+        Command[] partyOn = {lightOnCommand, stereoOnWithCDCommand};
+        Command[] partyOff = {lightOffCommand, stereoOffCommand};
+
+        MacroCommand partyOnMacro = new MacroCommand(partyOn);
+        MacroCommand partyOffMacro = new MacroCommand(partyOff);
+
+        remoteControl.setCommand(0, partyOnMacro, partyOffMacro);
+
+        remoteControl.onButtonWasPushed(0);
+        remoteControl.offBUttonWasPushed(0);
+
+        /*
         RemoteControlWithUndo remoteControl = new RemoteControlWithUndo();
 
         CeilingFan ceilingFan = new CeilingFan("Living Room");
@@ -31,6 +52,8 @@ public class RemoteLoader {
         remoteControl.onButtonWasPushed(1);
         System.out.println(remoteControl);
         remoteControl.undoButtonWasPushed();
+        */
+
         /*
         Light livingRoomLight = new Light("Living Room");
         Light kitchenLIght = new Light("Kitchen");
